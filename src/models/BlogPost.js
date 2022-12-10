@@ -38,8 +38,8 @@ const BlogPost = (sequelize, DataTypes) => {
     timestamps: true,
     });
     Post.associate = (models) => {
-      Post.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
-      Post.hasOne(models.PostCategory, { foreignKey: 'postId', as: 'category' })
+      Post.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
+      Post.hasOne(models.PostCategory, { foreignKey: 'post_id', as: 'category' })
   };
   
   return Post;

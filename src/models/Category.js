@@ -19,10 +19,10 @@ const Category = (sequelize, DataTypes) => {
     });
     
   Cat.associate = (models) => {
-    Cat.hasMany(models.PostCategory, { foreignKey: 'caegoryId', as: 'category' });
+    Cat.hasMany(models.PostCategory, { foreignKey: 'category_id', as: 'category' });
   };
 
   return Cat;
 };
   
-  module.exports = Category;
+module.exports = Category;
