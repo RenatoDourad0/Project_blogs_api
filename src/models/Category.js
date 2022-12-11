@@ -13,13 +13,13 @@ const Category = (sequelize, DataTypes) => {
     }, {
     sequelize,
     modelName: 'Category',
-    tableName: 'Categories',
-    uderscored: true, 
+    tableName: 'categories',
+    underscored: true, 
     timestamps: false,
     });
     
   Cat.associate = (models) => {
-    Cat.hasMany(models.PostCategory, { foreignKey: 'category_id', as: 'category' });
+    Cat.hasMany(models.PostCategory, { foreignKey: 'categoryId', as: 'category' });
   };
 
   return Cat;

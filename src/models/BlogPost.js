@@ -14,7 +14,7 @@ const BlogPost = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       field: 'user_id',
@@ -34,12 +34,12 @@ const BlogPost = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'BlogPost',
     tableName: 'blog_posts',
-    uderscored: true, 
+    underscored: true, 
     timestamps: true,
     });
     Post.associate = (models) => {
-      Post.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
-      Post.hasOne(models.PostCategory, { foreignKey: 'post_id', as: 'category' })
+      Post.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
+      Post.hasOne(models.PostCategory, { foreignKey: 'postId', as: 'category' })
   };
   
   return Post;

@@ -6,7 +6,7 @@ const User = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true,
     },
-    display_name: {
+    displayName: {
       type: DataTypes.STRING,
       field: 'display_name',
       allowNull: false,
@@ -21,18 +21,19 @@ const User = (sequelize, DataTypes) => {
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      default: 'http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png',
     }
     }, {
     sequelize,
     modelName: 'User',
-    tableName: 'Users',
-    uderscored: true, 
+    tableName: 'users',
+    underscored: true,
     timestamps: false,
     });
     
   User.associate = (models) => {
-    User.hasMany(models.BlogPost, { foreignKey: 'user_id', as: 'posts' });
+    User.hasMany(models.BlogPost, { foreignKey: 'userId', as: 'posts' });
   };
     
   return User;
