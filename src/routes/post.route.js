@@ -7,9 +7,9 @@ const postRoute = express.Router();
 
 postRoute.post('/', validatePost, validate, postController.create);
 postRoute.get('/', validate, postController.getAll);
+postRoute.get('/:id', validate, postController.getById);
+postRoute.put('/:id', validate, postController.updateById);
 
-// postRoute.get('/:id', validate, postController.getById);
-// postRoute.put('/:id', validate, postController.updateById);
 // postRoute.delete('/:id', validate, postController.deleteById);
 // postRoute.get('/search', validate, postController.searchByTerm);
 

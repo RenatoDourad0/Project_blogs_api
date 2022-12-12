@@ -16,7 +16,7 @@ const validateTransaction = (result) => {
   }
 };
 
-const transaction = async ({ title, content, categoryIds, userId }) => {
+const createPostTransaction = async ({ title, content, categoryIds, userId }) => {
   try {
     const result = await sequelize.transaction(async (t) => {
       const post = await BlogPost.create({ title, content, userId }, { transaction: t });
@@ -32,10 +32,41 @@ const transaction = async ({ title, content, categoryIds, userId }) => {
   }
 };
 
+const getById = async (id) => {
+  const post = await BlogPost
+  .findByPk(id, { include: [
+    { model: User, as: 'user', attributes: { exclude: ['password'] } },
+    { model: Category, as: 'categories', through: { model: PostCategory, attributes: [] } },
+  ] });
+  if (post !== null) return { type: null, message: post.dataValues };
+  return { type: 404, message: 'Post does not exist' };
+};
+
+const updatePostTransaction = async (id, { title, content, categoryIds, userId }) => {
+  try {
+    await sequelize.transaction(async (t) => {
+      const post = await BlogPost.update(
+        { title, content, userId }, { where: { id } }, { transaction: t },
+        );
+      const categories = await Promise.all(categoryIds
+        .map(async (categoryId) => PostCategory.update(
+            { postId: id, categoryId },
+            { where: { postId: id } }, { transaction: t },
+          )));
+      return [post, categories];
+    });
+    const newPost = await getById(id);
+    return { type: null, message: newPost.message };
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
 const create = async ({ title, content, categoryIds, userId }) => {
   const isCategoriesValid = await isCategoriesIdValid(categoryIds);
   if (!isCategoriesValid) return { type: 400, message: 'one or more "categoryIds" not found' };
-  return transaction({ title, content, categoryIds, userId });
+  return createPostTransaction({ title, content, categoryIds, userId });
 };
 
 const getAll = async () => {
@@ -48,12 +79,10 @@ const getAll = async () => {
   if (posts) return { type: null, message: posts };
 };
 
-const getById = async () => {
-
-};
-
-const updateById = async () => {
-
+const updateById = async (id, { title, content, categoryIds, userId }) => {
+  const isCategoriesValid = await isCategoriesIdValid(categoryIds);
+  if (!isCategoriesValid) return { type: 400, message: 'one or more "categoryIds" not found' };
+  return updatePostTransaction(id, { title, content, categoryIds, userId });
 };
 
 const deleteById = async () => {
