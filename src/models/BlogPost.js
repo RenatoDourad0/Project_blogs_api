@@ -20,26 +20,18 @@ const BlogPost = (sequelize, DataTypes) => {
       field: 'user_id',
       foreignKey: true,
     },
-    published: {
-      allowNull: false,
-      field: 'created_at',
-      type: DataTypes.DATE,
-    },
-    updated: {
-      allowNull: false,
-      field: 'updated_at',
-      type: DataTypes.DATE,
-    }
     }, {
     sequelize,
     modelName: 'BlogPost',
     tableName: 'blog_posts',
     underscored: true, 
     timestamps: true,
+    updatedAt: 'updated',
+    createdAt: 'published'
     });
     Post.associate = (models) => {
       Post.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
-      Post.hasOne(models.PostCategory, { foreignKey: 'postId', as: 'category' })
+      Post.hasOne(models.PostCategory, { foreignKey: 'postId', as: 'category' });
   };
   
   return Post;

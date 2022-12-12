@@ -31,9 +31,9 @@ const validate = async (req, res, next) => {
   }
   try {
     const decoded = jwt.verify(token, secret);
-    const user = await userService.getById(decoded.data.id);
-    if (user) {
-      req.user = user;
+    const { type, message } = await userService.getById(decoded.data.id);
+    if (type === null) {
+      req.user = message;
       next();
     }
   } catch (err) {

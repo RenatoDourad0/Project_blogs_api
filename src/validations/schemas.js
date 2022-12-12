@@ -7,7 +7,7 @@ const userSchema = Joi.object({
   image: Joi.string(),
 }).messages({
   'displayName.min': '"displayName" length must be at least 8 characters long',
-  'displayName.required': '"displayName" is reuired',
+  'displayName.required': '"displayName" is required',
   'email.email': '"email" must be a valid email',
   'password.min': '"password" length must be at least 6 characters long',
 });
@@ -18,7 +18,17 @@ const categorySchema = Joi.object({
   'name.required': '"name" is required',
 });
 
+const postSchema = Joi.object({
+  title: Joi.string().required(),
+  content: Joi.string().required(),
+  categoryIds: Joi.array().required(),
+}).messages({
+  'any.required': 'Some required fields are missing',
+  'string.empty': 'Some required fields are missing',
+});
+
 module.exports = {
   userSchema,
   categorySchema,
+  postSchema,
 };
