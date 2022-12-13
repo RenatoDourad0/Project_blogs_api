@@ -59,6 +59,7 @@
   <img src='' width='33%'>
 </div>
 -->
+Back end of a blog application with login, signup and posting/editing routes. All routes have access validation with JWT.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,16 +77,17 @@
 * ![Js](https://img.shields.io/badge/javascript-000000?style=for-the-badge&logo=javascript&logoColor=white)
 * ![Express](https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white)
 * ![sequelize](https://img.shields.io/badge/sequelize-000000?style=for-the-badge&logo=sequelize&logoColor=white)
+* ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtoken&logoColor=white)
 * ![mySql](https://img.shields.io/badge/mysql-000000?style=for-the-badge&logo=mysql&logoColor=white)
 * ![joi](https://img.shields.io/badge/joi-000000?style=for-the-badge&logo=joi&logoColor=white)
+* ![Docker](https://img.shields.io/badge/docker-000000?style=for-the-badge&logo=docker&logoColor=white)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+<!--## Usage
 
-<!-- Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources. -->
 These project was conceived for a viewport of 365px x 660px.
 
 Users are able to
@@ -97,7 +99,7 @@ Users are able to
   * see their favorites and finished recipes
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+-->
 
 
 <!-- GETTING STARTED -->
