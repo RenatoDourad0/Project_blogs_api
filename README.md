@@ -16,10 +16,10 @@
   <h1 align="center">Blogs API</h1>
 
   <p align="center">
-    This is a learning project ...
+    This is a learning project from Trybe web development course where i've practiced developing an REST API with Js, Express and Sequelize with mySql.
     <br />
     <br />
-    <a href="https://renatodourad0.github.io/Project_Irecipe/" target='_blank'>View Demo</a>
+    <!-- <a href="https://renatodourad0.github.io/Project_Irecipe/" target='_blank'>View Demo</a> -->
   </p>
 </div>
 
@@ -52,25 +52,32 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<!--
 <div>
   <img src='' width='33%'>
   <img src='' width='33%'>
   <img src='' width='33%'>
 </div>
+-->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 ### Built With
-
+<!--
 * [![React][React.js]][React-url] ![Hooks](https://img.shields.io/badge/Hooks-000000?style=for-the-badge&logo=&logoColor=purple) ![Context API](https://img.shields.io/badge/ContextAPI-000000?style=for-the-badge&logo=&logoColor=white)
 * ![React-router](https://img.shields.io/badge/reactrouter-000000?style=for-the-badge&logo=reactrouter&logoColor=white)
 * ![RTL](https://img.shields.io/badge/rtl-000000?style=for-the-badge&logo=rtl&logoColor=red)
 * ![Jest](https://img.shields.io/badge/jest-000000?style=for-the-badge&logo=jest&logoColor=white)
 * ![CSS3](https://img.shields.io/badge/css3-000000?style=for-the-badge&logo=css3&logoColor=blue)
 * ![Bootstrap](https://img.shields.io/badge/Bootstrap-000000?style=for-the-badge&logo=bootstrap&logoColor=white)
-
+ -->
+* ![Js](https://img.shields.io/badge/javascript-000000?style=for-the-badge&logo=javascript&logoColor=white)
+* ![Express](https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white)
+* ![sequelize](https://img.shields.io/badge/sequelize-000000?style=for-the-badge&logo=sequelize&logoColor=white)
+* ![mySql](https://img.shields.io/badge/mysql-000000?style=for-the-badge&logo=mysql&logoColor=white)
+* ![joi](https://img.shields.io/badge/joi-000000?style=for-the-badge&logo=joi&logoColor=white)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -114,7 +121,7 @@ To get a local copy up and running check below and follow these simple steps if 
 1. Fork the repo
 2. Clone the repo
    ```sh
-   git clone git@github.com:< USERNAME >/Project_Irecipe.git
+   git clone git@github.com:< USERNAME >/Project_blogs_api.git
    ```
 3. Install NPM packages
    ```sh
@@ -135,7 +142,7 @@ To get a local copy up and running check below and follow these simple steps if 
 
 Renato Dourado - [Linkedin](https://linkedin.com/in/renato-dourado-b1b301112) - renatocvdourado@hotmail.com
 
-Project Link: [https://github.com/RenatoDourad0/Project_Irecipe](https://github.com/RenatoDourad0/Project_Irecipe)
+<!-- Project Link: [https://github.com/RenatoDourad0/Project_Irecipe](https://github.com/RenatoDourad0/Project_Irecipe) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -143,9 +150,6 @@ Project Link: [https://github.com/RenatoDourad0/Project_Irecipe](https://github.
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-
-A special thanks to all my team members who embraced this project and made possible a fast and enjoyable development.
-- Fernando Oliveira, Lucas Rodrigues, Arthur Barbosa, Júlio Venancio,  Matheus Bora
 
 Contributors besides the team were responsible for evaluation files that have been removed after approval.
 
