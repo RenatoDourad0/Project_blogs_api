@@ -45,7 +45,7 @@ const updateById = async (req, res, next) => {
     }
     const { type, message } = await postService
       .updateById(id, { title, content, categoryIds, userId: user.id });
-    if (type === null) return res.status(201).json(message);
+    if (type === null) return res.status(200).json(message);
     return res.status(type).json({ message });
   } catch (error) {
     next(error);

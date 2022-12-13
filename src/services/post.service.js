@@ -48,11 +48,11 @@ const updatePostTransaction = async (id, { title, content, categoryIds, userId }
       const post = await BlogPost.update(
         { title, content, userId }, { where: { id } }, { transaction: t },
         );
-      const categories = await Promise.all(categoryIds
+      const categories = categoryIds ? await Promise.all(categoryIds
         .map(async (categoryId) => PostCategory.update(
             { postId: id, categoryId },
             { where: { postId: id } }, { transaction: t },
-          )));
+          ))) : [];
       return [post, categories];
     });
     const newPost = await getById(id);
@@ -80,7 +80,7 @@ const getAll = async () => {
 };
 
 const updateById = async (id, { title, content, categoryIds, userId }) => {
-  const isCategoriesValid = await isCategoriesIdValid(categoryIds);
+  const isCategoriesValid = categoryIds ? await isCategoriesIdValid(categoryIds) : true;
   if (!isCategoriesValid) return { type: 400, message: 'one or more "categoryIds" not found' };
   return updatePostTransaction(id, { title, content, categoryIds, userId });
 };

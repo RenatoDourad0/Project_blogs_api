@@ -20,6 +20,14 @@ const BlogPost = (sequelize, DataTypes) => {
       field: 'user_id',
       foreignKey: true,
     },
+    published: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    updated: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
     }, {
     sequelize,
     modelName: 'BlogPost',
